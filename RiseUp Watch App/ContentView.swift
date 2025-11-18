@@ -9,16 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+        NavigationStack {
+            VStack(spacing: 16) {
+                Text("RiseUp")
+                    .font(.title2)
+                    .bold()
 
-#Preview {
-    ContentView()
+                Text("Haptic Alarm (Prototype)")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+
+                NavigationLink("Test Haptics") {
+                    HapticTestView()
+                }
+                .buttonStyle(.borderedProminent)
+
+                Spacer()
+            }
+            .padding()
+        }
+    }
 }
